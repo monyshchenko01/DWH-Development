@@ -1,0 +1,352 @@
+models:
+  - name: cities
+    description: List of cities
+
+    columns:
+      - name: name
+        description: Name of the city
+
+      - name: oblast
+        description: Name of the oblast or country
+
+  - name: customers
+    description: List of customers
+
+    columns:
+      - name: customer_id
+        description: This is a unique identifier for a customer
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: Customer's first name
+
+      - name: last_name
+        description: Customer's last name
+
+      - name: email
+        description: Customer's email
+        tests:
+          - unique
+          - not_null
+
+      - name: phone
+        description: Customer's phone number
+        tests:
+          - unique
+          - not_null
+
+      - name: password
+        description: Customer's password
+
+      - name: city_id
+        description: Identifier for the customer's city
+
+      - name: created_at
+        description: Date (UTC) the customer was created
+
+  - name: cars
+    description: List of cars
+
+    columns:
+      - name: car_number
+        description: Unique identifier for the car
+        tests:
+          - unique
+          - not_null
+
+      - name: car_brend
+        description: Brand of the car
+
+      - name: car_model
+        description: Model of the car
+
+      - name: license_plate
+        description: License plate number of the car
+        tests:
+          - unique
+          - not_null
+
+      - name: color
+        description: Color of the car
+
+      - name: car_type
+        description: Type of the car
+
+      - name: year_produced
+        description: Year the car was produced
+
+  - name: drivers
+    description: List of drivers
+
+    columns:
+      - name: driver_id
+        description: Unique identifier for the driver
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: Driver's first name
+
+      - name: last_name
+        description: Driver's last name
+
+      - name: phone
+        description: Driver's phone number
+        tests:
+          - unique
+          - not_null
+
+      - name: email
+        description: Driver's email
+        tests:
+          - unique
+          - not_null
+
+      - name: license_number
+        description: Driver's license number
+        tests:
+          - unique
+          - not_null
+
+      - name: car_id
+        description: Identifier for the driver's car
+
+      - name: city_id
+        description: Identifier for the driver's city
+
+      - name: password
+        description: Driver's password
+
+      - name: created_at
+        description: Date (UTC) the driver was created
+
+  - name: rides
+    description: List of rides
+
+    columns:
+      - name: ride_id
+        description: Unique identifier for the ride
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: Identifier for the customer
+
+      - name: driver_id
+        description: Identifier for the driver
+
+      - name: pickup_location
+        description: Location where the ride starts
+
+      - name: pickup_city_id
+        description: Identifier for the city where the ride starts
+
+      - name: dropoff_location
+        description: Location where the ride ends
+
+      - name: dropoff_city_id
+        description: Identifier for the city where the ride ends
+
+      - name: status
+        description: Status of the ride
+        tests:
+          - accepted_values:
+              values: ['requested', 'completed']
+
+      - name: requested_at
+        description: Date (UTC) the ride was requested
+
+      - name: completed_at
+        description: Date (UTC) the ride was completed
+
+  - name: payments
+    description: List of payments
+
+    columns:
+      - name: payment_id
+        description: Unique identifier for the payment
+        tests:
+          - unique
+          - not_null
+
+      - name: ride_id
+        description: Identifier for the ride
+
+      - name: amount
+        description: Total amount (AUD) of the payment
+        tests:
+          - not_null
+
+      - name: payment_method
+        description: Method of payment
+
+      - name: card_number
+        description: Card number used for the payment
+        tests:
+          - not_null
+
+      - name: paid_at
+        description: Date (UTC) the payment was made
+
+  - name: reviews
+    description: List of reviews
+
+    columns:
+      - name: review_id
+        description: Unique identifier for the review
+        tests:
+          - unique
+          - not_null
+
+      - name: ride_id
+        description: Identifier for the ride
+
+      - name: user_id
+        description: Identifier for the user
+
+      - name: driver_id
+        description: Identifier for the driver
+
+      - name: rating
+        description: Rating given by the user
+
+      - name: comment
+        description: Comment given by the user
+
+      - name: created_at
+        description: Date (UTC) the review was created
+
+  - name: couriers
+    description: List of couriers
+
+    columns:
+      - name: courier_id
+        description: Unique identifier for the courier
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        description: Courier's first name
+
+      - name: last_name
+        description: Courier's last name
+
+      - name: phone
+        description: Courier's phone number
+        tests:
+          - unique
+          - not_null
+
+      - name: email
+        description: Courier's email
+        tests:
+          - unique
+          - not_null
+
+      - name: city_id
+        description: Identifier for the courier's city
+
+      - name: car_id
+        description: Identifier for the courier's car
+
+      - name: created_at
+        description: Date (UTC) the courier was created
+
+  - name: deliveries
+    description: List of deliveries
+
+    columns:
+      - name: delivery_id
+        description: Unique identifier for the delivery
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: Identifier for the customer
+
+      - name: courier_id
+        description: Identifier for the courier
+
+      - name: pickup_location
+        description: Location where the delivery starts
+
+      - name: pickup_city_id
+        description: Identifier for the city where the delivery starts
+
+      - name: dropoff_location
+        description: Location where the delivery ends
+
+      - name: dropoff_city_id
+        description: Identifier for the city where the delivery ends
+
+      - name: status
+        description: Status of the delivery
+        tests:
+          - accepted_values:
+              values: ['requested', 'completed']
+
+      - name: requested_at
+        description: Date (UTC) the delivery was requested
+
+      - name: completed_at
+        description: Date (UTC) the delivery was completed
+
+  - name: shifts
+    description: List of shifts
+
+    columns:
+      - name: shift_id
+        description: Unique identifier for the shift
+        tests:
+          - unique
+          - not_null
+
+      - name: driver_id
+        description: Identifier for the driver
+
+      - name: courier_id
+        description: Identifier for the courier
+
+      - name: start_time
+        description: Date (UTC) the shift started
+
+      - name: end_time
+        description: Date (UTC) the shift ended
+
+  - name: donations
+    description: List of donations
+
+    columns:
+      - name: donation_id
+        description: Unique identifier for the donation
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: Identifier for the customer
+
+      - name: amount
+        description: Total amount (AUD) of the donation
+        tests:
+          - not_null
+
+      - name: payment_method
+        description: Method of payment
+
+      - name: card_number
+        description: Card number used for the donation
+        tests:
+          - not_null
+
+      - name: comment
+        description: Comment given by the donor
+
+      - name: donated_at
+        description: Date (UTC) the donation was made

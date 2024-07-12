@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/models/staging/cars.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/models/staging/cities.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/models/staging/couriers.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/models/staging/customers.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/models/staging/deliveries.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/models/staging/donations.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/models/staging/drivers.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/models/staging/payments.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/models/staging/reviews.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/models/staging/rides.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/models/staging/shifts.sql" dialect="GenericSQL" />
+  </component>
+</project>

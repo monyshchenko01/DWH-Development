@@ -1,0 +1,117 @@
+Table cities {
+  name varchar
+  oblast varchar
+}
+
+Table customers {
+  customer_id varchar PK
+  first_name varchar
+  last_name varchar
+  email varchar
+  phone varchar
+  password varchar
+  city_id int
+  created_at date
+}
+
+Table cars {
+  car_number varchar
+  car_brand varchar
+  car_model varchar
+  license_plate varchar
+  color varchar
+  car_type varchar
+  year_produced int
+}
+
+Table drivers {
+  driver_id varchar PK
+  first_name varchar
+  last_name varchar
+  phone varchar
+  email varchar
+  license_number varchar
+  car_id int
+  city_id int
+  password varchar
+  created_at date
+}
+
+Table rides {
+  ride_id varchar
+  customer_id int
+  driver_id int
+  pickup_location varchar
+  pickup_city_id int
+  dropoff_location varchar
+  dropoff_city_id int
+  status varchar
+  requested_at date
+  completed_at date
+}
+
+Table payments {
+  payment_id varchar
+  ride_id int
+  amount int
+  payment_method varchar
+  card_number varchar
+  paid_at date
+  Ref: payments.ride_id > rides.ride_id
+}
+
+Table reviews {
+  review_id varchar
+  ride_id int
+  user_id int
+  driver_id int
+  rating int
+  comment varchar
+  created_at date
+  Ref: reviews.ride_id > rides.ride_id
+  Ref: reviews.user_id > customers.customer_id
+  Ref: reviews.driver_id > drivers.driver_id
+}
+
+Table couriers {
+  courier_id varchar
+  first_name varchar
+  last_name varchar
+  phone varchar
+  email varchar
+  city_id int
+  car_id int
+  created_at date
+}
+
+Table deliveries {
+  delivery_id varchar
+  customer_id int
+  courier_id int
+  pickup_location varchar
+  pickup_city_id int
+  dropoff_location varchar
+  dropoff_city_id int
+  status varchar
+  requested_at date
+  completed_at date
+}
+
+Table shifts {
+  shift_id varchar
+  driver_id int
+  courier_id int
+  start_time date
+  end_time date
+}
+
+Table donations {
+  donation_id varchar
+  customer_id int
+  amount int
+  payment_method varchar
+  card_number varchar
+  comment varchar
+  donated_at date
+  Ref: donations.customer_id > customers.customer_id
+}
