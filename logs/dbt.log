@@ -157,3 +157,16 @@ Runtime Error
 [0m09:37:06.135207 [debug] [MainThread]: Command `dbt build` failed at 09:37:06.135159 after 0.04 seconds
 [0m09:37:06.135388 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1031275e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c71a90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c71d30>]}
 [0m09:37:06.135574 [debug] [MainThread]: Flushing usage events
+[0m09:42:49.146032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050545b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106afb2b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106afb820>]}
+
+
+============================== 09:42:49.149059 | a55c4edd-3197-40f3-a4ed-0118a1f4368d ==============================
+[0m09:42:49.149059 [info ] [MainThread]: Running with dbt=1.8.3
+[0m09:42:49.149432 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'cache_selected_only': 'False', 'quiet': 'False', 'introspect': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'profiles_dir': '/Users/matviionyshchenko/.dbt', 'partial_parse': 'True', 'no_print': 'None', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt build', 'log_path': '/Users/matviionyshchenko/Desktop/DWH-Development/logs', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'fail_fast': 'False', 'indirect_selection': 'eager', 'warn_error': 'None', 'debug': 'False'}
+[0m09:42:49.151169 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'DWH-Development'
+[0m09:42:49.152593 [debug] [MainThread]: Resource report: {"command_name": "build", "command_wall_clock_time": 0.04358829, "process_user_time": 0.651896, "process_kernel_time": 0.103336, "process_mem_max_rss": "95141888", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m09:42:49.152883 [debug] [MainThread]: Command `dbt build` failed at 09:42:49.152831 after 0.04 seconds
+[0m09:42:49.153065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050545b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106976ac0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106924f40>]}
+[0m09:42:49.153242 [debug] [MainThread]: Flushing usage events
