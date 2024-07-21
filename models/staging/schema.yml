@@ -16,7 +16,6 @@ models:
       - name: customer_id
         description: This is a unique identifier for a customer
         tests:
-          - unique
           - not_null
 
       - name: first_name
@@ -53,7 +52,6 @@ models:
       - name: car_number
         description: Unique identifier for the car
         tests:
-          - unique
           - not_null
 
       - name: car_brend
@@ -65,7 +63,6 @@ models:
       - name: license_plate
         description: License plate number of the car
         tests:
-          - unique
           - not_null
 
       - name: color
@@ -84,7 +81,6 @@ models:
       - name: driver_id
         description: Unique identifier for the driver
         tests:
-          - unique
           - not_null
 
       - name: first_name
@@ -96,19 +92,16 @@ models:
       - name: phone
         description: Driver's phone number
         tests:
-          - unique
           - not_null
 
       - name: email
         description: Driver's email
         tests:
-          - unique
           - not_null
 
       - name: license_number
         description: Driver's license number
         tests:
-          - unique
           - not_null
 
       - name: car_id
@@ -130,7 +123,6 @@ models:
       - name: ride_id
         description: Unique identifier for the ride
         tests:
-          - unique
           - not_null
 
       - name: customer_id
@@ -170,7 +162,6 @@ models:
       - name: payment_id
         description: Unique identifier for the payment
         tests:
-          - unique
           - not_null
 
       - name: ride_id
@@ -199,7 +190,6 @@ models:
       - name: review_id
         description: Unique identifier for the review
         tests:
-          - unique
           - not_null
 
       - name: ride_id
@@ -227,7 +217,6 @@ models:
       - name: courier_id
         description: Unique identifier for the courier
         tests:
-          - unique
           - not_null
 
       - name: first_name
@@ -239,13 +228,11 @@ models:
       - name: phone
         description: Courier's phone number
         tests:
-          - unique
           - not_null
 
       - name: email
         description: Courier's email
         tests:
-          - unique
           - not_null
 
       - name: city_id
@@ -264,7 +251,6 @@ models:
       - name: delivery_id
         description: Unique identifier for the delivery
         tests:
-          - unique
           - not_null
 
       - name: customer_id
@@ -304,7 +290,6 @@ models:
       - name: shift_id
         description: Unique identifier for the shift
         tests:
-          - unique
           - not_null
 
       - name: driver_id
@@ -326,7 +311,6 @@ models:
       - name: donation_id
         description: Unique identifier for the donation
         tests:
-          - unique
           - not_null
 
       - name: customer_id

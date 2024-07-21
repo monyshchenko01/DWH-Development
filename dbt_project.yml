@@ -1,9 +1,9 @@
-name: 'DWH-Development'
+name: 'DWH_Development'
 
 config-version: 2
 version: '0.1'
 
-profile: 'DWH-Development'
+profile: 'DWH_Development'
 
 model-paths: ["models"]
 seed-paths: ["seeds"]

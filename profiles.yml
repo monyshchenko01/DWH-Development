@@ -1,0 +1,8 @@
+DWH_Development:
+
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'DWH.duckdb'
+      threads: 24
