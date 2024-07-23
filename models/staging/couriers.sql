@@ -5,10 +5,10 @@ WITH cleaned AS (
         last_name,
         phone,
         email,
-        CAST(city_id as int) AS city_id,
-        CAST(car_id as int) AS car_id,
-        CAST(created_at AS DATE) AS created_at
-    FROM {{ ref('couriers') }}
+        CAST(city_id as int),
+        CAST(car_id as int),
+        CAST(created_at AS DATE)
+    FROM {{ ref('raw_couriers') }}
     WHERE
         courier_id IS NOT NULL
         AND phone IS NOT NULL

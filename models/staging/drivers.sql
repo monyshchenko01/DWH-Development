@@ -6,11 +6,11 @@ WITH cleaned AS (
         phone,
         email,
         license_number,
-        CAST(car_id as int) AS car_id,
-        CAST(city_id as int) AS city_id,
+        CAST(car_id as int),
+        CAST(city_id as int),
         password,
-        CAST(created_at AS DATE) AS created_at
-    FROM {{ ref('drivers') }}
+        CAST(created_at AS DATE)
+    FROM {{ ref('raw_drivers') }}
     WHERE
         driver_id IS NOT NULL
         AND phone IS NOT NULL

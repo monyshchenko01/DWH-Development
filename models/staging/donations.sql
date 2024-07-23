@@ -2,12 +2,12 @@ WITH cleaned AS (
     SELECT
         donation_id,
         customer_id,
-        CAST(amount as DECIMAL(10, 2)) AS amount,
+        CAST(amount as DECIMAL(10, 2)),
         payment_method,
         card_number,
         comment,
-        CAST(donated_at AS DATE) AS donated_at
-    FROM {{ ref('donations') }}
+        CAST(donated_at AS DATE)
+    FROM {{ ref('raw_donations') }}
     WHERE
         donation_id IS NOT NULL
         AND customer_id IS NOT NULL

@@ -3,9 +3,9 @@ WITH cleaned AS (
         shift_id,
         driver_id,
         courier_id,
-        CAST(start_time AS TIMESTAMP) AS start_time,
-        CAST(end_time AS TIMESTAMP) AS end_time
-    FROM {{ ref('shifts') }}
+        CAST(start_time AS TIMESTAMP),
+        CAST(end_time AS TIMESTAMP)
+    FROM {{ ref('raw_shifts') }}
     WHERE
         shift_id IS NOT NULL
         AND driver_id IS NOT NULL

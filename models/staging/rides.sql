@@ -4,12 +4,12 @@ WITH cleaned AS (
         customer_id,
         driver_id,
         pickup_location,
-        CAST(pickup_city_id as int) AS pickup_city_id,
+        CAST(pickup_city_id as int),
         dropoff_location,
-        CAST(dropoff_city_id as int) AS dropoff_city_id,
-        CAST(requested_at AS DATE) AS requested_at,
-        CAST(completed_at AS DATE) AS completed_at
-    FROM {{ ref('rides') }}
+        CAST(dropoff_city_id as int),
+        CAST(requested_at AS DATE),
+        CAST(completed_at AS DATE)
+    FROM {{ ref('raw_rides') }}
     WHERE
         ride_id IS NOT NULL
         AND customer_id IS NOT NULL

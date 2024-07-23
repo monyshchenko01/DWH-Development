@@ -534,3 +534,409 @@ RuntimeError: Found a cycle: model.DWH_Development.payments
 [0m09:17:05.284199 [debug] [MainThread]: Command `dbt build` failed at 09:17:05.284143 after 0.65 seconds
 [0m09:17:05.284421 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103090640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104f9d1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105330c40>]}
 [0m09:17:05.284630 [debug] [MainThread]: Flushing usage events
+[0m08:44:10.979705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10367d610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105122280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1051228e0>]}
+
+
+============================== 08:44:10.984685 | 1d85edcc-d610-49de-b582-f4baff5e5144 ==============================
+[0m08:44:10.984685 [info ] [MainThread]: Running with dbt=1.8.3
+[0m08:44:10.985040 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'empty': 'False', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt build', 'partial_parse': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'profiles_dir': '/Users/matviionyshchenko/Desktop/DWH-Development', 'version_check': 'True', 'log_cache_events': 'False', 'fail_fast': 'False', 'printer_width': '80', 'write_json': 'True', 'static_parser': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'no_print': 'None', 'quiet': 'False', 'log_path': '/Users/matviionyshchenko/Desktop/DWH-Development/logs', 'debug': 'False', 'target_path': 'None'}
+[0m08:44:11.232083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1d85edcc-d610-49de-b582-f4baff5e5144', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105203130>]}
+[0m08:44:11.257357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1d85edcc-d610-49de-b582-f4baff5e5144', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10520d580>]}
+[0m08:44:11.257932 [info ] [MainThread]: Registered adapter: duckdb=1.8.1
+[0m08:44:11.272717 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m08:44:11.363130 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m08:44:11.363698 [debug] [MainThread]: Partial parsing: updated file: DWH_Development://models/staging/schema.yml
+[0m08:44:11.413639 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `tests` config has been renamed to `data_tests`. Please see
+https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+information.
+[0m08:44:11.413982 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '1d85edcc-d610-49de-b582-f4baff5e5144', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1054d6760>]}
+[0m08:44:11.511641 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.jaffle_shop
+- models.jaffle_shop.staging
+[0m08:44:11.514993 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1d85edcc-d610-49de-b582-f4baff5e5144', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056ec130>]}
+[0m08:44:11.587836 [error] [MainThread]: Encountered an error:
+Found a cycle: model.DWH_Development.payments
+[0m08:44:11.590118 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 205, in build
+    results = task.run()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 506, in run
+    self._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/compile.py", line 125, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 147, in _runtime_initialize
+    self.compile_manifest()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/build.py", line 219, in compile_manifest
+    self.graph: Graph = self.compiler.compile(self.manifest, add_test_edges=True)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 449, in compile
+    linker.link_graph(manifest)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 192, in link_graph
+    raise RuntimeError("Found a cycle: {}".format(cycle))
+RuntimeError: Found a cycle: model.DWH_Development.payments
+
+[0m08:44:11.591668 [debug] [MainThread]: Resource report: {"command_name": "build", "command_wall_clock_time": 0.6508897, "process_user_time": 1.053526, "process_kernel_time": 0.16762, "process_mem_max_rss": "126451712", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m08:44:11.591990 [debug] [MainThread]: Command `dbt build` failed at 08:44:11.591931 after 0.65 seconds
+[0m08:44:11.592209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10367d610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1039ee940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056aa2b0>]}
+[0m08:44:11.592536 [debug] [MainThread]: Flushing usage events
+[0m08:44:26.364380 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ef15e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1125ead30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1125ea7c0>]}
+
+
+============================== 08:44:26.366406 | 7e3f5291-1e43-449f-946c-ea4b7fff4f40 ==============================
+[0m08:44:26.366406 [info ] [MainThread]: Running with dbt=1.8.3
+[0m08:44:26.366767 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'use_experimental_parser': 'False', 'empty': 'False', 'use_colors': 'True', 'debug': 'False', 'write_json': 'True', 'warn_error': 'None', 'log_path': '/Users/matviionyshchenko/Desktop/DWH-Development/logs', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/matviionyshchenko/Desktop/DWH-Development', 'partial_parse': 'True', 'version_check': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager', 'log_format': 'default', 'target_path': 'None', 'log_cache_events': 'False', 'no_print': 'None', 'introspect': 'True', 'invocation_command': 'dbt build', 'static_parser': 'True', 'cache_selected_only': 'False'}
+[0m08:44:26.554968 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7e3f5291-1e43-449f-946c-ea4b7fff4f40', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111eef5b0>]}
+[0m08:44:26.580699 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7e3f5291-1e43-449f-946c-ea4b7fff4f40', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1121bb1f0>]}
+[0m08:44:26.581183 [info ] [MainThread]: Registered adapter: duckdb=1.8.1
+[0m08:44:26.590023 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m08:44:26.680828 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:44:26.681097 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:44:26.685306 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.jaffle_shop.staging
+- models.jaffle_shop
+[0m08:44:26.710912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7e3f5291-1e43-449f-946c-ea4b7fff4f40', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112bad130>]}
+[0m08:44:26.804442 [error] [MainThread]: Encountered an error:
+Found a cycle: model.DWH_Development.payments
+[0m08:44:26.806654 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 205, in build
+    results = task.run()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 506, in run
+    self._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/compile.py", line 125, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 147, in _runtime_initialize
+    self.compile_manifest()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/build.py", line 219, in compile_manifest
+    self.graph: Graph = self.compiler.compile(self.manifest, add_test_edges=True)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 449, in compile
+    linker.link_graph(manifest)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 192, in link_graph
+    raise RuntimeError("Found a cycle: {}".format(cycle))
+RuntimeError: Found a cycle: model.DWH_Development.payments
+
+[0m08:44:26.808334 [debug] [MainThread]: Resource report: {"command_name": "build", "command_wall_clock_time": 0.48837453, "process_user_time": 0.96154, "process_kernel_time": 0.146415, "process_mem_max_rss": "121323520", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m08:44:26.808907 [debug] [MainThread]: Command `dbt build` failed at 08:44:26.808832 after 0.49 seconds
+[0m08:44:26.809155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ef15e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112700cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112719f70>]}
+[0m08:44:26.809373 [debug] [MainThread]: Flushing usage events
+[0m08:46:24.886840 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10691d5b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1083b4df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1083b4730>]}
+
+
+============================== 08:46:24.891293 | a209ed15-43a8-4ba2-9d03-aa2b956d477e ==============================
+[0m08:46:24.891293 [info ] [MainThread]: Running with dbt=1.8.3
+[0m08:46:24.891680 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'quiet': 'False', 'use_colors': 'True', 'log_path': '/Users/matviionyshchenko/Desktop/DWH-Development/logs', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'log_format': 'default', 'warn_error': 'None', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'no_print': 'None', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'empty': 'False', 'invocation_command': 'dbt build', 'indirect_selection': 'eager', 'fail_fast': 'False', 'debug': 'False', 'write_json': 'True', 'introspect': 'True', 'printer_width': '80', 'profiles_dir': '/Users/matviionyshchenko/Desktop/DWH-Development'}
+[0m08:46:25.156449 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a209ed15-43a8-4ba2-9d03-aa2b956d477e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b46790>]}
+[0m08:46:25.183228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a209ed15-43a8-4ba2-9d03-aa2b956d477e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107148bb0>]}
+[0m08:46:25.183964 [info ] [MainThread]: Registered adapter: duckdb=1.8.1
+[0m08:46:25.193875 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m08:46:25.288925 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:46:25.289213 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:46:25.293428 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.jaffle_shop
+- models.jaffle_shop.staging
+[0m08:46:25.320472 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a209ed15-43a8-4ba2-9d03-aa2b956d477e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108874130>]}
+[0m08:46:25.418780 [error] [MainThread]: Encountered an error:
+Found a cycle: model.DWH_Development.payments
+[0m08:46:25.421278 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 205, in build
+    results = task.run()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 506, in run
+    self._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/compile.py", line 125, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 147, in _runtime_initialize
+    self.compile_manifest()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/build.py", line 219, in compile_manifest
+    self.graph: Graph = self.compiler.compile(self.manifest, add_test_edges=True)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 449, in compile
+    linker.link_graph(manifest)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 192, in link_graph
+    raise RuntimeError("Found a cycle: {}".format(cycle))
+RuntimeError: Found a cycle: model.DWH_Development.payments
+
+[0m08:46:25.422823 [debug] [MainThread]: Resource report: {"command_name": "build", "command_wall_clock_time": 0.5741115, "process_user_time": 1.012501, "process_kernel_time": 0.168122, "process_mem_max_rss": "123813888", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m08:46:25.423161 [debug] [MainThread]: Command `dbt build` failed at 08:46:25.423106 after 0.57 seconds
+[0m08:46:25.423389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10691d5b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084c3970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087f4820>]}
+[0m08:46:25.423599 [debug] [MainThread]: Flushing usage events
+[0m12:03:49.307563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056814c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107127250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071277c0>]}
+
+
+============================== 12:03:49.312739 | a8f2a672-f2e2-456b-8dcb-4b295daf0ff2 ==============================
+[0m12:03:49.312739 [info ] [MainThread]: Running with dbt=1.8.3
+[0m12:03:49.313118 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '/Users/matviionyshchenko/Desktop/DWH-Development', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'introspect': 'True', 'static_parser': 'True', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'debug': 'False', 'log_cache_events': 'False', 'fail_fast': 'False', 'no_print': 'None', 'target_path': 'None', 'invocation_command': 'dbt build', 'log_format': 'default', 'empty': 'False', 'version_check': 'True', 'log_path': '/Users/matviionyshchenko/Desktop/DWH-Development/logs', 'partial_parse': 'True', 'use_experimental_parser': 'False'}
+[0m12:03:49.611164 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a8f2a672-f2e2-456b-8dcb-4b295daf0ff2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1058b4640>]}
+[0m12:03:49.636328 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a8f2a672-f2e2-456b-8dcb-4b295daf0ff2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071f5460>]}
+[0m12:03:49.636910 [info ] [MainThread]: Registered adapter: duckdb=1.8.1
+[0m12:03:49.650652 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m12:03:49.740406 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:03:49.740649 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:03:49.744512 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.jaffle_shop.staging
+- models.jaffle_shop
+[0m12:03:49.769677 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a8f2a672-f2e2-456b-8dcb-4b295daf0ff2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075d9130>]}
+[0m12:03:49.870418 [error] [MainThread]: Encountered an error:
+Found a cycle: model.DWH_Development.payments
+[0m12:03:49.872641 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 205, in build
+    results = task.run()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 506, in run
+    self._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/compile.py", line 125, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 147, in _runtime_initialize
+    self.compile_manifest()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/build.py", line 219, in compile_manifest
+    self.graph: Graph = self.compiler.compile(self.manifest, add_test_edges=True)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 449, in compile
+    linker.link_graph(manifest)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 192, in link_graph
+    raise RuntimeError("Found a cycle: {}".format(cycle))
+RuntimeError: Found a cycle: model.DWH_Development.payments
+
+[0m12:03:49.880003 [debug] [MainThread]: Resource report: {"command_name": "build", "command_wall_clock_time": 0.6170808, "process_user_time": 0.956951, "process_kernel_time": 0.201424, "process_mem_max_rss": "121356288", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:03:49.880302 [debug] [MainThread]: Command `dbt build` failed at 12:03:49.880252 after 0.62 seconds
+[0m12:03:49.880510 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056814c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1072308b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10709d9d0>]}
+[0m12:03:49.880707 [debug] [MainThread]: Flushing usage events
+[0m12:05:15.154453 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10353c5e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104fe3250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104fe3790>]}
+
+
+============================== 12:05:15.158948 | b42b7955-4275-405e-a231-33c39d63ab8d ==============================
+[0m12:05:15.158948 [info ] [MainThread]: Running with dbt=1.8.3
+[0m12:05:15.159326 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run --select info_about_car', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'write_json': 'True', 'printer_width': '80', 'target_path': 'None', 'log_format': 'default', 'static_parser': 'True', 'fail_fast': 'False', 'partial_parse': 'True', 'warn_error': 'None', 'profiles_dir': '/Users/matviionyshchenko/Desktop/DWH-Development', 'use_colors': 'True', 'debug': 'False', 'introspect': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'version_check': 'True', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'log_path': '/Users/matviionyshchenko/Desktop/DWH-Development/logs', 'log_cache_events': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])'}
+[0m12:05:15.348473 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b42b7955-4275-405e-a231-33c39d63ab8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105118310>]}
+[0m12:05:15.373721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b42b7955-4275-405e-a231-33c39d63ab8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e58a90>]}
+[0m12:05:15.374210 [info ] [MainThread]: Registered adapter: duckdb=1.8.1
+[0m12:05:15.383268 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m12:05:15.471187 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:05:15.471433 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:05:15.475319 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.jaffle_shop
+- models.jaffle_shop.staging
+[0m12:05:15.500957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b42b7955-4275-405e-a231-33c39d63ab8d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105491130>]}
+[0m12:05:15.586476 [error] [MainThread]: Encountered an error:
+Found a cycle: model.DWH_Development.payments
+[0m12:05:15.588652 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 569, in run
+    results = task.run()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 506, in run
+    self._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/compile.py", line 125, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 147, in _runtime_initialize
+    self.compile_manifest()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/base.py", line 145, in compile_manifest
+    self.graph = self.compiler.compile(self.manifest)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 449, in compile
+    linker.link_graph(manifest)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 192, in link_graph
+    raise RuntimeError("Found a cycle: {}".format(cycle))
+RuntimeError: Found a cycle: model.DWH_Development.payments
+
+[0m12:05:15.590386 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.47244117, "process_user_time": 0.943554, "process_kernel_time": 0.147043, "process_mem_max_rss": "119472128", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:05:15.590713 [debug] [MainThread]: Command `dbt run` failed at 12:05:15.590654 after 0.47 seconds
+[0m12:05:15.590934 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10353c5e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105132bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105496ee0>]}
+[0m12:05:15.591143 [debug] [MainThread]: Flushing usage events
+[0m12:09:31.736378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f055b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084e7df0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084e7730>]}
+
+
+============================== 12:09:31.744409 | f4042dd1-2d74-4c67-8fa8-746cba2743d4 ==============================
+[0m12:09:31.744409 [info ] [MainThread]: Running with dbt=1.8.3
+[0m12:09:31.744770 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'version_check': 'True', 'quiet': 'False', 'static_parser': 'True', 'warn_error': 'None', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'use_colors': 'True', 'log_path': '/Users/matviionyshchenko/Desktop/DWH-Development/logs', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/matviionyshchenko/Desktop/DWH-Development', 'debug': 'False', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'indirect_selection': 'eager', 'partial_parse': 'True', 'printer_width': '80', 'fail_fast': 'False', 'target_path': 'None', 'log_cache_events': 'False', 'invocation_command': 'dbt build'}
+[0m12:09:31.994439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f4042dd1-2d74-4c67-8fa8-746cba2743d4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106246790>]}
+[0m12:09:32.019533 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f4042dd1-2d74-4c67-8fa8-746cba2743d4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106947bb0>]}
+[0m12:09:32.020106 [info ] [MainThread]: Registered adapter: duckdb=1.8.1
+[0m12:09:32.029379 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m12:09:32.125287 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:09:32.125528 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:09:32.129451 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.jaffle_shop
+- models.jaffle_shop.staging
+[0m12:09:32.154531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f4042dd1-2d74-4c67-8fa8-746cba2743d4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108aac130>]}
+[0m12:09:32.249046 [error] [MainThread]: Encountered an error:
+Found a cycle: model.DWH_Development.payments
+[0m12:09:32.251591 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 205, in build
+    results = task.run()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 506, in run
+    self._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/compile.py", line 125, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 147, in _runtime_initialize
+    self.compile_manifest()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/build.py", line 219, in compile_manifest
+    self.graph: Graph = self.compiler.compile(self.manifest, add_test_edges=True)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 449, in compile
+    linker.link_graph(manifest)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 192, in link_graph
+    raise RuntimeError("Found a cycle: {}".format(cycle))
+RuntimeError: Found a cycle: model.DWH_Development.payments
+
+[0m12:09:32.253246 [debug] [MainThread]: Resource report: {"command_name": "build", "command_wall_clock_time": 0.561469, "process_user_time": 0.949995, "process_kernel_time": 0.151049, "process_mem_max_rss": "122437632", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:09:32.253581 [debug] [MainThread]: Command `dbt build` failed at 12:09:32.253527 after 0.56 seconds
+[0m12:09:32.253808 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f055b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1085f4970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a2b820>]}
+[0m12:09:32.254013 [debug] [MainThread]: Flushing usage events
+[0m12:12:16.283738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102c695b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10470f280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10470f850>]}
+
+
+============================== 12:12:16.290909 | a457c0fc-e1f6-430c-b6b2-16f7593f08f9 ==============================
+[0m12:12:16.290909 [info ] [MainThread]: Running with dbt=1.8.3
+[0m12:12:16.291306 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'target_path': 'None', 'warn_error': 'None', 'log_format': 'default', 'printer_width': '80', 'profiles_dir': '/Users/matviionyshchenko/Desktop/DWH-Development', 'no_print': 'None', 'use_colors': 'True', 'fail_fast': 'False', 'empty': 'None', 'log_cache_events': 'False', 'log_path': '/Users/matviionyshchenko/Desktop/DWH-Development/logs', 'write_json': 'True', 'introspect': 'True', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'use_experimental_parser': 'False', 'quiet': 'False', 'version_check': 'True', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt docs generate'}
+[0m12:12:16.526840 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a457c0fc-e1f6-430c-b6b2-16f7593f08f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102e92790>]}
+[0m12:12:16.551870 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a457c0fc-e1f6-430c-b6b2-16f7593f08f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104514a90>]}
+[0m12:12:16.552422 [info ] [MainThread]: Registered adapter: duckdb=1.8.1
+[0m12:12:16.561304 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m12:12:16.654630 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:12:16.654873 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:12:16.658783 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.jaffle_shop.staging
+- models.jaffle_shop
+[0m12:12:16.683514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a457c0fc-e1f6-430c-b6b2-16f7593f08f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104bbe130>]}
+[0m12:12:16.694946 [error] [MainThread]: Encountered an error:
+Found a cycle: model.DWH_Development.payments
+[0m12:12:16.697538 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 273, in docs_generate
+    results = task.run()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/docs/generate.py", line 223, in run
+    compile_results = CompileTask.run(self)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 506, in run
+    self._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/compile.py", line 125, in _runtime_initialize
+    super()._runtime_initialize()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/runnable.py", line 147, in _runtime_initialize
+    self.compile_manifest()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/base.py", line 145, in compile_manifest
+    self.graph = self.compiler.compile(self.manifest)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 449, in compile
+    linker.link_graph(manifest)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/compilation.py", line 192, in link_graph
+    raise RuntimeError("Found a cycle: {}".format(cycle))
+RuntimeError: Found a cycle: model.DWH_Development.payments
+
+[0m12:12:16.699219 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_wall_clock_time": 0.4526095, "process_user_time": 0.874749, "process_kernel_time": 0.153367, "process_mem_max_rss": "119324672", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:12:16.699590 [debug] [MainThread]: Command `dbt docs generate` failed at 12:12:16.699532 after 0.45 seconds
+[0m12:12:16.699816 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102c695b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ba8100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ba8070>]}
+[0m12:12:16.700016 [debug] [MainThread]: Flushing usage events
+[0m12:12:24.930009 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1035a8580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10504c280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10504c730>]}
+
+
+============================== 12:12:24.931881 | f23cdae5-3940-4466-8894-094abc08d608 ==============================
+[0m12:12:24.931881 [info ] [MainThread]: Running with dbt=1.8.3
+[0m12:12:24.932229 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt docs serve', 'write_json': 'True', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'quiet': 'False', 'printer_width': '80', 'partial_parse': 'True', 'profiles_dir': '/Users/matviionyshchenko/Desktop/DWH-Development', 'debug': 'False', 'target_path': 'None', 'fail_fast': 'False', 'static_parser': 'True', 'use_colors': 'True', 'cache_selected_only': 'False', 'log_path': '/Users/matviionyshchenko/Desktop/DWH-Development/logs', 'no_print': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'log_format': 'default', 'empty': 'None', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'use_experimental_parser': 'False', 'version_check': 'True'}
+[0m12:12:25.049987 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f23cdae5-3940-4466-8894-094abc08d608', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105003be0>]}
+[0m12:12:25.075620 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f23cdae5-3940-4466-8894-094abc08d608', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d131c0>]}
+[0m12:12:43.275846 [error] [MainThread]: Encountered an error:
+
+[0m12:12:43.285977 [error] [MainThread]: Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/cli/main.py", line 303, in docs_serve
+    results = task.run()
+  File "/opt/anaconda3/lib/python3.9/site-packages/dbt/task/docs/serve.py", line 29, in run
+    httpd.serve_forever()
+  File "/opt/anaconda3/lib/python3.9/socketserver.py", line 232, in serve_forever
+    ready = selector.select(poll_interval)
+  File "/opt/anaconda3/lib/python3.9/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
+
+[0m12:12:43.295287 [debug] [MainThread]: Resource report: {"command_name": "serve", "command_wall_clock_time": 18.398605, "process_user_time": 0.799179, "process_kernel_time": 0.130265, "process_mem_max_rss": "114704384", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:12:43.296739 [debug] [MainThread]: Command `dbt docs serve` failed at 12:12:43.296548 after 18.40 seconds
+[0m12:12:43.298072 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1035a8580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1052ea5e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1052ea6d0>]}
+[0m12:12:43.298832 [debug] [MainThread]: Flushing usage events

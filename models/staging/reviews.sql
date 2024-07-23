@@ -4,10 +4,10 @@ WITH cleaned AS (
         ride_id,
         user_id,
         driver_id,
-        CAST(rating as int) AS rating,
+        CAST(rating as int),
         comment,
-        CAST(created_at AS DATE) AS created_at
-    FROM {{ ref('reviews') }}
+        CAST(created_at AS DATE)
+    FROM {{ ref('raw_reviews') }}
     WHERE
         review_id IS NOT NULL
         AND ride_id IS NOT NULL

@@ -6,9 +6,9 @@ with cleaned as (
         email,
         phone,
         password,
-        CAST(city_id as int) AS city_id,
-        CAST(created_at AS DATE) AS created_at
-    FROM {{ ref('customers') }}
+        CAST(city_id as int),
+        CAST(created_at AS DATE)
+    FROM {{ ref('raw_customers') }}
     WHERE
         customer_id IS NOT NULL
         AND email IS NOT NULL

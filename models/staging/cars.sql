@@ -6,8 +6,8 @@ WITH cleaned AS (
         license_plate,
         color,
         car_type,
-        CAST(year_produced as int) AS year_produced
-    FROM {{ ref('cars') }}
+        CAST(year_produced as int)
+    FROM {{ ref('raw_cars') }}
     WHERE
         car_number IS NOT NULL
         AND car_brend IS NOT NULL
